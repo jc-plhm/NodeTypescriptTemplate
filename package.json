@@ -4,24 +4,31 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "ts-node ./src/debug.ts",
+    "start": "ts-node ./src/index.ts",
+    "build": "tsc",
+    "build-production": "tsc --project tsconfig.production.json",
+    "test-watch": "jest --watch",
+    "test-coverage": "jest --coverage",
+    "test": "jest",
+    "clean": "rm -rf ./lib/",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jc-plhm/node_test.git"
+    "url": "git+https://github.com/jc-plhm/node-typescript-template.git"
   },
   "author": "polynhome",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jc-plhm/node_test/issues"
+    "url": "https://github.com/jc-plhm/node-typescript-template/issues"
   },
-  "homepage": "https://github.com/jc-plhm/node_test#readme",
+  "homepage": "https://github.com/jc-plhm/node-typescript-template#readme",
   "dependencies": {
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.0",
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.12",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
@@ -32,7 +39,9 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
     "prettier": "2.5.1",
+    "ts-jest": "^27.1.3",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   }
